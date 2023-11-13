@@ -8,11 +8,13 @@ const allRoutes = require("./routes")
 
 // Connect to MongoDB
 db.then(() => {
-    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+        console.log('Server Listening on Port ' + PORT);
+    });
 })
 .catch((err) => {
     console.log(err);
-})
+});
 
 // Route
 app.use(express.json());
